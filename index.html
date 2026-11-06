@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Hema Dede ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@600;700;800;900;1000&family=Playfair+Display:wght@600;700;800;900;1,600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+ --ink:#34212f;
+ --pink:#e94e91;
+ --rose:#b72d70;
+ --plum:#713b72;
+ --lavender:#a47ac9;
+ --cream:#fff9f5;
+}
+
+body{
+ min-height:100vh;
+ overflow-x:hidden;
+ font-family:'Nunito',sans-serif;
+ color:var(--ink);
+ background:linear-gradient(125deg,#ffe0ec,#fff0df,#f2dff8,#ffe4ed,#fff4e9);
+ background-size:400% 400%;
+ animation:sky 16s ease infinite;
+ position:relative;
+}
+
+@keyframes sky{
+ 0%,100%{background-position:0% 50%}
+ 50%{background-position:100% 50%}
+}
+
+/* Dreamy moving light */
+
+.light{
+ position:fixed;
+ width:360px;height:360px;
+ border-radius:50%;
+ filter:blur(80px);
+ opacity:.48;
+ pointer-events:none;
+ animation:drift 11s ease-in-out infinite alternate;
+}
+.light.a{background:#f28db9;top:-140px;left:-120px}
+.light.b{background:#bba0ed;right:-130px;bottom:-120px;animation-delay:-4s}
+.light.c{background:#ffd0a8;left:35%;top:40%;animation-delay:-7s}
+
+@keyframes drift{
+ to{transform:translate(75px,65px) scale(1.2)}
+}
+
+/* Floating HEMA + HEMO background words */
+
+.hemo-layer{
+ position:fixed;
+ inset:0;
+ z-index:1;
+ overflow:hidden;
+ pointer-events:none;
+}
+
+.floating-hemo{
+ position:absolute;
+ bottom:-100px;
+ white-space:nowrap;
+ font-family:'Playfair Display',serif;
+ font-weight:900;
+ color:#a83d75;
+ opacity:0;
+ text-shadow:
+  0 0 7px #ffacd6,
+  0 0 15px #e875b5,
+  0 0 28px #d75b9c88;
+ animation:hemoFloat linear infinite, wordGlow 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes hemoFloat{
+ 0%{
+  transform:translateY(0) rotate(-12deg) scale(.75);
+  opacity:0;
+ }
+ 15%{opacity:.32}
+ 75%{opacity:.28}
+ 100%{
+  transform:translateY(-120vh) rotate(12deg) scale(1.15);
+  opacity:0;
+ }
+}
+
+@keyframes wordGlow{
+ from{
+  text-shadow:0 0 5px #ffacd6,0 0 12px #e875b5;
+ }
+ to{
+  text-shadow:0 0 12px #ffacd6,0 0 24px #e875b5,0 0 38px #d75b9c99;
+ }
+}
+
+/* Floating hearts */
+
+.float-heart{
+ position:fixed;
+ z-index:2;
+ bottom:-60px;
+ color:#e95d9d;
+ pointer-events:none;
+ animation:rise linear infinite;
+ text-shadow:0 4px 14px #d64f9033;
+}
+@keyframes rise{
+ 0%{transform:translateY(0) rotate(-15deg) scale(.5);opacity:0}
+ 15%{opacity:.8}
+ 80%{opacity:.7}
+ 100%{transform:translateY(-115vh) rotate(30deg) scale(1.2);opacity:0}
+}
+
+/* Sparkles */
+
+.star{
+ position:fixed;
+ z-index:2;
+ pointer-events:none;
+ color:#fff;
+ text-shadow:0 0 8px #c85b9b,0 0 18px #fff;
+ animation:twinkle 2.4s ease-in-out infinite;
+}
+@keyframes twinkle{
+ 0%,100%{opacity:.2;transform:scale(.5) rotate(0)}
+ 50%{opacity:1;transform:scale(1.3) rotate(45deg)}
+}
+
+/* CSS teddy bear */
+
+.teddy{
+ position:fixed;
+ z-index:4;
+ right:7%;
+ top:8%;
+ width:76px;
+ height:100px;
+ animation:teddyFloat 4s ease-in-out infinite;
+ filter:drop-shadow(0 9px 9px #7d42612c);
+}
+.teddy .ear{
+ position:absolute;
+ width:26px;height:27px;
+ background:#bd8b79;
+ border-radius:50%;
+ top:3px;
+}
+.teddy .ear.left{left:5px}
+.teddy .ear.right{right:5px}
+.teddy .head{
+ position:absolute;
+ top:9px;left:9px;
+ width:58px;height:54px;
+ background:linear-gradient(145deg,#f1c8a9,#dca78c);
+ border-radius:48% 48% 45% 45%;
+}
+.teddy .face{
+ position:absolute;
+ top:31px;left:27px;
+ width:22px;height:15px;
+ background:#ffe4d3;
+ border-radius:50%;
+}
+.teddy .eye{
+ position:absolute;
+ top:28px;
+ width:5px;height:6px;
+ background:#49313a;
+ border-radius:50%;
+ z-index:2;
+}
+.teddy .eye.left{left:23px}
+.teddy .eye.right{right:23px}
+.teddy .nose{
+ position:absolute;
+ top:34px;left:35px;
+ width:7px;height:5px;
+ background:#81535c;
+ border-radius:50%;
+ z-index:3;
+}
+.teddy .body{
+ position:absolute;
+ bottom:0;left:15px;
+ width:47px;height:43px;
+ background:linear-gradient(145deg,#f1c8a9,#dca78c);
+ border-radius:45% 45% 40% 40%;
+}
+.teddy .bow{
+ position:absolute;
+ top:53px;left:34px;
+ width:13px;height:11px;
+ background:#e65c98;
+ clip-path:polygon(50% 50%,0 0,0 100%,50% 65%,100% 100%,100% 0);
+ z-index:4;
+}
+@keyframes teddyFloat{
+ 0%,100%{transform:translateY(0) rotate(-7deg)}
+ 50%{transform:translateY(-17px) rotate(7deg)}
+}
+
+/* Layout */
+
+.page{
+ min-height:100vh;
+ padding:65px 18px 45px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ position:relative;
+ z-index:3;
+}
+
+.container{
+ width:100%;
+ max-width:760px;
+ text-align:center;
+ animation:appear 1.2s ease both;
+}
+@keyframes appear{
+ from{opacity:0;transform:translateY(30px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+.kicker{
+ display:inline-block;
+ padding:8px 17px;
+ border:1px solid #ffffffc9;
+ background:#ffffff66;
+ border-radius:30px;
+ color:#753c67;
+ font-size:10px;
+ font-weight:900;
+ letter-spacing:3px;
+ box-shadow:0 5px 20px #9b54731a;
+}
+
+h1{
+ margin:22px 0 5px;
+ font-family:'Great Vibes',cursive;
+ font-size:clamp(55px,10vw,91px);
+ font-weight:400;
+ line-height:1.08;
+ color:#7d3269;
+ text-shadow:0 6px 25px #a9487824;
+}
+h1 .name{color:#e44f91}
+h1 .heart{
+ display:inline-block;
+ font-family:'Nunito',sans-serif;
+ font-size:.4em;
+ color:#e94e91;
+ animation:beat 1.5s infinite;
+ vertical-align:middle;
+}
+@keyframes beat{
+ 0%,100%{transform:scale(1)}
+ 50%{transform:scale(1.28)}
+}
+
+.kurdish-title{
+ direction:rtl;
+ font-family:'Noto Naskh Arabic',serif;
+ font-size:24px;
+ font-weight:700;
+ color:#8d4e91;
+ margin:12px 0 27px;
+}
+
+/* Glass message card */
+
+.card{
+ position:relative;
+ max-width:680px;
+ margin:auto;
+ padding:40px 36px 34px;
+ border-radius:30px;
+ border:1px solid #ffffffed;
+ background:linear-gradient(145deg,#ffffffd9,#fff9f5b8);
+ backdrop-filter:blur(22px);
+ box-shadow:0 25px 70px #813f681c,
+ inset 0 1px 0 white;
+ overflow:hidden;
+}
+
+.card:before{
+ content:"";
+ position:absolute;
+ width:210px;height:210px;
+ border-radius:50%;
+ background:#f6c5dc66;
+ filter:blur(45px);
+ top:-130px;right:-65px;
+}
+.card:after{
+ content:"";
+ position:absolute;
+ width:180px;height:180px;
+ border-radius:50%;
+ background:#d9c3f166;
+ filter:blur(40px);
+ bottom:-130px;left:-60px;
+}
+
+.card-inner{position:relative;z-index:1}
+
+.card-heading{
+ font-family:'Playfair Display',serif;
+ font-size:25px;
+ font-style:italic;
+ color:#783e70;
+ margin-bottom:22px;
+}
+
+.message{
+ color:#34212f;
+ font-size:16px;
+ font-weight:700;
+ line-height:2;
+}
+.message strong{
+ font-weight:900;
+ color:#bd286e;
+}
+
+.highlight{
+ display:block;
+ margin:13px 0;
+ font-family:'Playfair Display',serif;
+ font-size:clamp(30px,6vw,42px);
+ font-weight:900;
+ color:#934ab1;
+ text-shadow:0 3px 15px #b98bd233;
+}
+
+/* Animated main love line */
+
+.love{
+ margin-top:20px;
+ font-family:'Nunito',sans-serif;
+ font-size:clamp(27px,6vw,43px);
+ font-weight:1000;
+ color:#171016;
+ line-height:1.5;
+ letter-spacing:-1px;
+}
+
+.love .hema-name,
+.love .love-words{
+ display:inline-block;
+ font-weight:1000;
+ color:#171016;
+}
+
+.love .animated-letter{
+ display:inline-block;
+ opacity:0;
+ transform:translateY(25px) scale(.7);
+ animation:letterCome .55s ease forwards;
+}
+
+@keyframes letterCome{
+ to{
+  opacity:1;
+  transform:translateY(0) scale(1);
+ }
+}
+
+.signature{
+ margin-top:8px;
+ font-size:11px;
+ font-weight:900;
+ letter-spacing:3px;
+ color:#66445d;
+}
+
+.separator{
+ width:90px;
+ height:2px;
+ margin:26px auto;
+ border-radius:10px;
+ background:linear-gradient(90deg,transparent,#d77da9,#a87cc7,transparent);
+}
+
+.kurdish{
+ direction:rtl;
+ font-family:'Noto Naskh Arabic',serif;
+ font-size:19px;
+ line-height:2.15;
+ font-weight:700;
+ color:#49303f;
+}
+
+/* Ready section */
+
+.ready{margin-top:40px}
+
+.ready-label{
+ color:#793d70;
+ font-size:10px;
+ font-weight:900;
+ letter-spacing:4px;
+}
+
+.ready h2{
+ margin-top:12px;
+ font-family:'Playfair Display',serif;
+ font-size:clamp(27px,5vw,42px);
+ font-weight:800;
+ color:#502d4b;
+}
+
+.ready p{
+ margin-top:8px;
+ color:#60475b;
+ font-size:14px;
+ font-weight:700;
+}
+
+.buttons{
+ width:350px;
+ max-width:100%;
+ height:100px;
+ position:relative;
+ margin:15px auto 0;
+}
+
+.btn{
+ position:absolute;
+ top:20px;
+ padding:14px 35px;
+ border:0;
+ border-radius:40px;
+ font-family:'Nunito',sans-serif;
+ font-size:14px;
+ font-weight:900;
+ cursor:pointer;
+ transition:transform .25s,box-shadow .25s;
+}
+
+.yes{
+ left:25px;
+ color:white;
+ background:linear-gradient(135deg,#ef78ac,#ca3d83);
+ box-shadow:0 9px 25px #c93e8240;
+}
+.yes:hover{
+ transform:translateY(-5px) scale(1.08);
+ box-shadow:0 13px 30px #c93e8255;
+}
+
+.no{
+ left:195px;
+ color:#573d50;
+ background:#fff;
+ box-shadow:0 8px 22px #6b36501c;
+ white-space:nowrap;
+}
+
+.response{
+ display:none;
+ max-width:410px;
+ margin:12px auto;
+ padding:25px;
+ border-radius:25px;
+ background:#ffffffdf;
+ box-shadow:0 12px 35px #853e681c;
+ animation:appear .6s ease;
+}
+.response h3{
+ font-family:'Great Vibes',cursive;
+ color:#d63f87;
+ font-size:43px;
+ font-weight:400;
+}
+.response p{
+ color:#45303f;
+ font-weight:700;
+ margin:8px 0 17px;
+}
+.continue{
+ display:inline-block;
+ padding:13px 25px;
+ border-radius:30px;
+ text-decoration:none;
+ color:white;
+ background:linear-gradient(135deg,#ed77a9,#bd4387);
+ font-weight:900;
+ font-size:13px;
+ box-shadow:0 7px 20px #c93e8230;
+}
+
+.footer{
+ margin-top:27px;
+ font-family:'Great Vibes',cursive;
+ color:#844b73;
+ font-size:25px;
+}
+
+@media(max-width:550px){
+ .page{padding:65px 15px 35px}
+ .teddy{width:58px;height:78px;right:3%;top:3%;transform:scale(.8)}
+ .card{padding:34px 22px}
+ .message{font-size:14px}
+ .kurdish{font-size:17px}
+ .love{font-size:clamp(25px,7vw,38px)}
+ .buttons{width:310px}
+ .no{left:175px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="light a"></div>
+<div class="light b"></div>
+<div class="light c"></div>
+
+<!-- HEMA + HEMO background animation -->
+<div class="hemo-layer" id="hemoLayer"></div>
+
+<!-- Floating pookie teddy -->
+<div class="teddy" aria-hidden="true">
+ <div class="ear left"></div>
+ <div class="ear right"></div>
+ <div class="head"></div>
+ <div class="eye left"></div>
+ <div class="eye right"></div>
+ <div class="face"></div>
+ <div class="nose"></div>
+ <div class="body"></div>
+ <div class="bow"></div>
+</div>
+
+<main class="page">
+<div class="container">
+
+ <div class="kicker">A LITTLE WORLD MADE WITH LOVE</div>
+
+ <h1>
+   My World,<br>
+   <span class="name">My Dearest Hema Dede</span>
+   <span class="heart">♥</span>
+ </h1>
+
+ <div class="kurdish-title" lang="ckb">
+   هەمای خۆشەویستم
+ </div>
+
+ <section class="card">
+ <div class="card-inner">
+
+   <h2 class="card-heading">A little note from your brother...</h2>
+
+   <div class="message">
+     Today, I just want to say<br>
+     <strong>THANK YOU FOR BEING IN MY LIFE.</strong>
+   </div>
+
+   <span class="highlight">I'M SO LUCKY TO HAVE YOU!</span>
+
+   <div class="message">
+     I'm forever grateful to call you
+     <strong>MY SISTER.</strong>
+   </div>
+
+   <div class="love" id="loveLine">
+     <span class="hema-name">My Hema Dede,</span><br>
+     <span class="love-words">I LOVE YOU SO MUCH ♥</span>
+   </div>
+
+   <div class="signature">YOUR LITTLE BROTHER</div>
+
+   <div class="separator"></div>
+
+   <div class="kurdish" lang="ckb">
+     هەما دێی خۆشەویستم، سوپاس بۆ ئەوەی لە ژیانمدایت.
+     زۆر بەخۆشحاڵییەوە هەست دەکەم کە خوشکێکی وەک تۆم هەیە.
+     زۆر خۆشم دەوێیت!
+   </div>
+
+ </div>
+ </section>
+
+ <section class="ready">
+   <div class="ready-label">JUST ONE LITTLE QUESTION</div>
+   <h2>Are You Ready, Hema Dede?</h2>
+   <p>Your little surprise is waiting for you...</p>
+
+   <div class="buttons" id="buttons">
+     <button class="btn yes" id="yes">YES! ♥</button>
+     <button class="btn no" id="no">NO</button>
+   </div>
+
+   <div class="response" id="response">
+     <h3>Yayyyy! I knew it!</h3>
+     <p>Okay, Hema Dede. Your surprise awaits!</p>
+     <a class="continue" href="page2.html">A Little Something for You</a>
+   </div>
+ </section>
+
+ <div class="footer">Made with all my love, just for you.</div>
+
+</div>
+</main>
+
+<script>
+
+// Floating HEMA + HEMO words
+const hemoLayer=document.getElementById('hemoLayer');
+
+for(let i=0;i<40;i++){
+ const word=document.createElement('div');
+ word.className='floating-hemo';
+
+ // Alternate between HEMO and HEMA
+ word.textContent=i%2===0?'HEMO':'HEMA';
+
+ word.style.left=Math.random()*100+'vw';
+ word.style.fontSize=(17+Math.random()*30)+'px';
+ word.style.animationDuration=(12+Math.random()*18)+'s, '+(2+Math.random()*2)+'s';
+ word.style.animationDelay=(-Math.random()*25)+'s, '+(-Math.random()*3)+'s';
+
+ hemoLayer.appendChild(word);
+}
+
+// Floating hearts
+for(let i=0;i<28;i++){
+ const h=document.createElement('div');
+ h.className='float-heart';
+ h.textContent='♥';
+ h.style.left=Math.random()*100+'vw';
+ h.style.fontSize=(12+Math.random()*23)+'px';
+ h.style.animationDuration=(10+Math.random()*14)+'s';
+ h.style.animationDelay=(-Math.random()*22)+'s';
+ document.body.appendChild(h);
+}
+
+// Sparkling background
+for(let i=0;i<27;i++){
+ const s=document.createElement('div');
+ s.className='star';
+ s.textContent='✦';
+ s.style.left=Math.random()*100+'vw';
+ s.style.top=Math.random()*100+'vh';
+ s.style.fontSize=(8+Math.random()*13)+'px';
+ s.style.animationDelay=Math.random()*3+'s';
+ document.body.appendChild(s);
+}
+
+// Letter-by-letter love message
+const loveLine=document.getElementById('loveLine');
+
+loveLine.querySelectorAll('.hema-name, .love-words').forEach(part=>{
+ const text=part.textContent;
+ part.textContent='';
+
+ [...text].forEach((letter,index)=>{
+  const span=document.createElement('span');
+  span.className='animated-letter';
+  span.textContent=letter===' '?' ':letter;
+  span.style.animationDelay=(index*.07)+'s';
+  part.appendChild(span);
+ });
+});
+
+// NO button escape
+const no=document.getElementById('no');
+const area=document.getElementById('buttons');
+
+function moveNo(){
+ const maxX=Math.max(0,area.clientWidth-no.offsetWidth);
+ const maxY=Math.max(0,area.clientHeight-no.offsetHeight);
+ no.style.left=Math.random()*maxX+'px';
+ no.style.top=Math.random()*maxY+'px';
+}
+
+no.addEventListener('pointerenter',moveNo);
+no.addEventListener('touchstart',e=>{
+ e.preventDefault();
+ moveNo();
+},{passive:false});
+
+// YES button
+document.getElementById('yes').addEventListener('click',()=>{
+ area.style.display='none';
+ const response=document.getElementById('response');
+ response.style.display='block';
+ response.scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+</script>
+
+</body>
+</html>
